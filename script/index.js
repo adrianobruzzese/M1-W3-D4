@@ -55,18 +55,18 @@ function sortNums() {
 sortNums()
 
 function randomNumber(maxNum) {
-    let x = Math.floor(Math.random() * maxNum + 1)
-    if (!savedNumber.includes(x)){
-        savedNumber.push(x)
-        return x
+    let i = Math.floor(Math.random() * maxNum + 1)
+
+    if (!savedNumber.includes(i)){  // Chiaramente usiamo !savedNumber con operatore logico !NOT per controllare se saveNumber è falsy. Se saveNumber è un array vuoto (che è un valore falsy), la condizione è vera. Se saveNumber contiene elementi, la condizione è falsa.
+        savedNumber.push(i)
+        return i
     } else {
         if (savedNumber.length < maxNum){
             return randomNumber(maxNum)
-        }else {
+            } else {
+            
 
-            return tombola()
+            return endNumber() //da scrivere dopo le 17
         }
     }
 }
-
-
